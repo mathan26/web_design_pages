@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1 class="center">HIT THE KEYS, ENJOY THE MUSIC</h1>
     <div class="keys">
       <div data-key="65" class="key">
         <kbd>A</kbd>
@@ -62,8 +63,6 @@
         );
         const key = document.querySelector(`div[data-key="${event.keyCode}"]`);
         if (!audio) return;
-        console.log(audio);
-        console.log(key);
         audio.currentTime = 0;
         key.classList.add("playing");
         audio.play();
