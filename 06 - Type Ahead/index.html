@@ -22,8 +22,6 @@
       fetch(endpoint)
         .then((blob) => blob.json())
         .then((data) => cities.push(...data));
-      console.log(cities);
-
       function findMatches(wordToMatch, cities) {
         return cities.filter((place) => {
           const regex = new RegExp(wordToMatch, "gi");
