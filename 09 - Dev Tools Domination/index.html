@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+    <link rel="icon" href="/favicon.png" />
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <p>@Console: Learned cool Dev Tools Tricks</p>
+
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
+
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
+
+      //Debug Break on Modification to find the JS cause the DOM change
+      //Go to the html attr Right Click -> Select Break -> Break on Attribute
+      // clearing
+      console.clear();
+      // Regular
+
+      console.log("hello");
+      let name = "Mathan";
+      // Interpolated
+      console.log(`Hello with Interpolated ${name}`);
+
+      // Styled
+
+      console.log("%c Hello with Style", "font-size:20px;color:red");
+
+      // warning!
+      console.warn("This is warning!");
+      // Error :|
+      console.error("This is error!");
+      // Info
+      console.info("This is info");
+      // Testing
+      const p = document.querySelector("p");
+      console.assert(p.classList.contains("someclass"), "That is wrong!");
+
+      // Viewing DOM Elements
+      console.log("viewing DOM");
+      console.log(p);
+      console.dir(p);
+      // Grouping together
+      dogs.forEach((dog) => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+        console.groupEnd(`${dog.name}`);
+      });
+      // counting
+      console.count("Mathan");
+      console.count("Mathan");
+      console.count("Mathan");
+      console.count("Mathankumar");
+      console.count("Mathan");
+      console.count("Mathankumar");
+      console.count("Mathan");
+      console.count("Mathan");
+
+      // timing
+      console.time("fetching data");
+      fetch("https://api.github.com/users/wesbos")
+        .then((data) => data.json())
+        .then((data) => {
+          console.timeEnd("fetching data");
+        });
+
+      console.table(dogs);
+    </script>
+  </body>
+</html>
