@@ -1,4 +1,4 @@
-// Get our elements
+ // Get our elements
 
 const player = document.querySelector(".player");
 const video = player.querySelector(".viewer");
