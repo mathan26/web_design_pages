@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.png" />
+    <title>Key Detection</title>
+    <h1 style="text-align: center; color: rgb(168, 30, 223)">
+      Type 🎁 <code style="font-size: 75px"> Mathan</code>🎁 to see sparkly
+      unicorn stickers
+    </h1>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      const pressed = [];
+      const secretCode = "mathan";
+      window.addEventListener("keyup", (e) => {
+        pressed.push(e.key);
+        pressed.splice(
+          -secretCode.length - 1,
+          pressed.length - secretCode.length
+        );
+        //console.log(e.key);
+        if (pressed.join("").toLowerCase().includes(secretCode)) {
+          //  console.log("DING DING");
+          cornify_add();
+        }
+
+        //  console.log(pressed);
+      });
+    </script>
+  </body>
+</html>
